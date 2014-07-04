@@ -1,0 +1,33 @@
+<html>
+<head>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/json-format.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="./css/foundation.min.css">
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#jsonSubmit').bind('click', function() {
+				var formattedJSONString = JSONFormat($('#input').val());
+				$('#output').html(formattedJSONString);
+			});
+		});		
+	</script>
+	<style>.container{padding:1em;}</style>
+</head>
+<body>
+	<div class="container">
+		
+		<div class="row">
+			
+			<h3 id="header">Simple json formatter</h3>
+			<textarea id="input" style="width:800px; height: 200px;" placeholder="enter json string here"></textarea><br/><br/>
+			<button id="jsonSubmit">format!</button>
+			<div style="position:fixed; bottom: 10px; right: 10px; float:right;" >
+				<h3><a href="#header">Back to top</a></h3>
+			</div>
+			<pre id="output"></pre>
+
+
+		</div>
+	</div>
+</body>
+</html>
